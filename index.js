@@ -1,10 +1,48 @@
-// have listing appear? have listing appear after clicking to another page. 
-// (new page everytime: The home page is a "new page")
-//observe list of Alice; $30
-//go home
-//see bob, teacher, starting price $50
-//go home
-//see carol, programmer starign price 70
-//average staring price is updated to 50
+//const freelancers = [{
+//name: "Bob", occupation: "Teacher", price: "30",
+//name: "Carol", occupation: "Programmer", price: "70"
+//}];
+ 
+const freelancers = [ "Bob Teacher $50", "Carol Programmer $70"];
+let currentIndex = 0;
 
-//new freelancers appear every few seconds, and the starting price is updated accordingly. 
+//do I have to make one for each section of the array?
+
+function freelancerNxtLine() {
+  const freelancerPost = document.querySelector("#freelancerPost");
+  if (currentIndex < freelancers.length) {
+    freelancerPost.innerHTML += freelancers[currentIndex] + "<br>";
+    currentIndex++;
+  } else {
+    clearInterval(freelancerID);
+  }
+}
+
+const freelancerID = setInterval(freelancerNxtLine, 3000);
+
+
+
+// const stringArray = ["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"];
+// let currentIndex = 0;
+
+// function printNextLine() {
+//   const outputDiv = document.getElementById("output");
+//   if (currentIndex < stringArray.length) {
+//     outputDiv.innerHTML += stringArray[currentIndex] + "<br>";
+//     currentIndex++;
+//   } else {
+//     clearInterval(intervalID);
+//   }
+// }
+
+// const intervalID = setInterval(printNextLine, 1000); // Change 1000 to the desired interval in milliseconds
+
+
+
+
+// const squares = document.querySelector("#squares");
+// const squareElements = shapes.map((shape) => {
+//   const element = document.createElement("li");
+//   element.classList.add(shape.color, shape.size);
+//   return element;
+// });
