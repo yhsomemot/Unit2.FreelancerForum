@@ -63,6 +63,15 @@ render();
 //a function is written that generates a freelancer with a random name, occupation, and starting price.
 //this object is pushed into the freelancers array.
 function addFreelancer() {
+  if (freelancers.length < 3) {
+    freelancers.push({
+      name: "Carol",
+      occupation: "programmer",
+      price: 70,
+    });
+
+    return; //if we wanted to include carol right after and before the random names 
+  }
   const name = names[Math.floor(Math.random() * names.length)]; //getting a random index?
   const occupation = occupations[Math.floor(Math.random() * occupations.length)];
   const price = Math.floor(Math.random() * 75) + 25; //never get a price that is less than 25
@@ -74,18 +83,6 @@ setInterval(() => {
   addFreelancer();
   render();
 }, 3000);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
